@@ -1,0 +1,29 @@
+1. Install python 3.10.8
+
+Download Python
+https://www.python.org/ftp/python/3.10.8/python-3.10.8-amd64.exe
+
+Download XAMP
+https://excellmedia.dl.sourceforge.net/project/xampp/XAMPP%20Windows/8.0.28/xampp-windows-x64-8.0.28-0-VS16-installer.exe
+
+
+2. navigate to project folder in cmd and type the following commands
+	
+	pip install virtualenv
+
+3. Now type the following commands:
+	
+	python -m venv venv	
+	
+	pip install -r requirements.txt
+	
+	
+
+NOTE: to run again the project only run given commands after navigating to the project folder in cmd:
+
+	venv\Scripts\Activate
+	
+	set FLASK_APP=app.py
+
+	flask run
+
