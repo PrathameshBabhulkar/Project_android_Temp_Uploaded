@@ -1,0 +1,38 @@
+
+{% include 'admin_headerfile.html' %}
+
+{% include 'adm_navbar.html' %}
+
+    <div class="container">
+      <center><h1 class="h3 mb-0 text-gray-800"> History List </h1></center>
+        <br>
+
+<!--      <a href="#" class="btn btn-info  btn-lg" style="">+</a>-->
+        <div style="overflow-x:auto;">
+            <table class="table table-hover" >
+              <tr>
+                  <th>User Number</th>
+                  <th>Username</th>
+                  <th>Filename</th>
+                  <th>Result</th>
+                  <th>Date</th>
+
+              </tr>
+
+                {% for n in profilelist %}
+
+              <tr>
+                <td>{{loop.index}}</td>
+                <td>{{n.user_id}}</td>
+                <td>{{n.filename}}</td>
+                <td>{{n.result}}</td>
+                <td>{{n.date}}</td>
+              </tr>
+
+                {% endfor %}
+
+
+            </table>
+        </div>
+      </div>
+

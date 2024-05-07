@@ -1,0 +1,40 @@
+{% include 'main_layout.html' %}
+
+<style>
+.container {
+            display: flex;
+            }
+
+    /* CSS for mobile responsiveness */
+    @media only screen and (max-width: 767px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container img {
+            height: auto;
+            width: 100%;
+        }
+        .container > div {
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+</style>
+
+<div class="container">
+    <center>
+        <h6 style="color:red;"></h6>
+    </center>
+
+    <div>
+        <img src="static/img/mal.jpg" height="600px" width="500px">
+    </div>
+    <div style="justify-content:space-around">
+        <br><br><br><br><br><br>
+        <a href="/login" class="btn btn-success" >User Login</a>
+        <a href="/signup" class="btn btn-primary">User Signup</a>
+        <a href="/admin" class="btn btn-danger">Admin Login</a>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %} 
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if msg|length %}
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>{{ msg }}</strong> 
+                    </div>
+                {% endif %}
+                <form action="{{ url_for('dashboard') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Upload .apk file</label>
+                        <input type="file" class="form-control" name="file">
+                    </div><br/>
+                    <button type="submit" class="btn btn-primary" style="margin:auto;display:block;">Upload</button>
+                </form>
+            </div>
+        </div><br/>
+        {% if category | length %}
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Permissions taken by App:</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th>Permission</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for permission in perm %}
+                            <tr>
+                                <td>{{ permission }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        </table>
+                        <p class="text-center">
+                        <span class="badge bg-primary" style="color: white;font-size: 20px;">{{ category }}</span>
+                        </p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <!-- /.container-fluid -->
+{% endblock %}

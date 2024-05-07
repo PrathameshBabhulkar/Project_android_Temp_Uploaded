@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}History{% endblock %}
+{% block content %} 
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">History</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if msg|length %}
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>{{ msg }}</strong> 
+                    </div>
+                {% endif %}
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Filename</th>
+                        <th>Result</th>
+                        <th>Timestamp</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for data in all_data %}
+                        <tr>
+                            <td>{{data.filename}}</td>
+                            <td>{{data.result}}</td>
+                            <td>{{data.date}}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div><br/>
+    </div>
+    <!-- /.container-fluid -->
+{% endblock %}
